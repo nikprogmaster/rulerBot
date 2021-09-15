@@ -69,8 +69,8 @@ def give_phrases(parts):
         phrase = ph[rp]
         ph.remove(ph[rp])
         index -= step
-        for p in parts_group:
-            bot.send_message(p, phrase)
+        for i in parts_group:
+            bot.send_message(i, phrase)
 
 
 def get_random_participant(parts):
@@ -87,7 +87,7 @@ def send_welcome(message):
     else:
         bot.send_message(message.chat.id, "Поздравляю, ты в игре!")
         parts = read_participants()
-        if message.chat.id not in parts:
+        if str(message.chat.id) not in parts:
             f = open('participants.txt', 'a')
             f.write(str(message.chat.id) + '\n')
             f.close()
