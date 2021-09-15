@@ -1,0 +1,14 @@
+[Unit]
+Description=Notify Bot
+After=network.target
+
+[Service]   
+User=nikita
+Group=nikita
+
+WorkingDirectory=/home/nikita/rulerBot/
+Environment="PYTHONPATH=/home/nikita/rulerBot/"
+ExecStart=/usr/bin/python3 /home/nikita/rulerBot/bot.py
+
+[Install]
+WantedBy=multi-user.target
