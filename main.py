@@ -63,7 +63,7 @@ def give_phrases(parts):
         step = 4
         if len(p) < 4:
             step = len(p)
-        for p in range(step):
+        for i in range(step):
             parts_group.append(get_random_participant(p))
         rp = random.randrange(0, len(ph))
         phrase = ph[rp]
@@ -75,7 +75,7 @@ def give_phrases(parts):
 
 def get_random_participant(parts):
     index = random.randrange(0, len(parts))
-    participant = parts[index]
+    participant = parts[index].copy()
     parts.remove(parts[index])
     return participant
 
