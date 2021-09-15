@@ -75,7 +75,7 @@ def give_phrases(parts):
 
 def get_random_participant(parts):
     index = random.randrange(0, len(parts))
-    participant = parts[index].copy()
+    participant = parts[index]
     parts.remove(parts[index])
     return participant
 
