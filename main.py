@@ -96,7 +96,7 @@ def bot_managering(message):
                 maintainer.is_game_started = True
                 bot.send_message(message.chat.id, 'Введите размер группы. Ее размер должен быть от 2 до 20',
                                  reply_markup=get_before_game_keyboard())
-        elif message.text == continue_game:
+        elif maintainer is not None and message.text == continue_game:
             if maintainer.group_number == 0:
                 bot.send_message(message.chat.id, 'Вы не ввели размер группы!', reply_markup=get_before_game_keyboard())
             else:
