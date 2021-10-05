@@ -18,7 +18,7 @@ class PhraseSender:
 
     def get_correct_group_number(self, phrase_number):
         while len(self.participants) > phrase_number * self.group_number:
-            phrase_number += 1
+            self.group_number += 1
         return self.group_number
 
     def give_phrases(self, all_phrases, bot):
